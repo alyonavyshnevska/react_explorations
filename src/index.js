@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// here we are inserting our app into that root div from html
+// and the "app" comes from app.js, app js contains the root app component
+// everything that we create will be in this main root app component
 ReactDOM.render(
   <React.StrictMode>
     <App />
