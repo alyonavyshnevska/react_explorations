@@ -1,5 +1,4 @@
 
-
 ## Render
 
 - the render() method, the only required method in a class component, which is used to render DOM nodes.
@@ -58,6 +57,36 @@ ReactDOM.render(
   element,
   document.getElementById('root')
 ); -->
+
+
+## State
+
+State is similar to props, but it is private and fully controlled by the component.
+
+in a class: 
+
+      class Clock extends React.Component {
+        constructor(props) {
+          super(props);
+          // The only place where you can assign this.state is the constructor.
+        // elsewhere setState
+          this.state = {date: new Date()};
+        }
+
+- only set this.state once and later use this.setState = ...
+
+- This is why state is often called local or encapsulated. It is not accessible to any component other than the one that owns and sets it.
+
+- Neither parent nor child components can know if a certain component is stateful or stateless, and they shouldn’t care whether it is defined as a function or a class.
+
+- A component may choose to pass its state down as props to its child components: 
+
+    <FormattedDate date={this.state.date} />
+
+- but the child wouldn't know if it's a state or just something typed by hand
+
+
+- We can use sateful components within stateless, and vice versa
 
 
 ## JS Syntax Refresher
