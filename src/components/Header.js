@@ -11,7 +11,7 @@ const Header = ({ title: fancytitle, onAdd, showAdd }) => {
         <header className='header'>
             <h1>{fancytitle}</h1>
             {location.pathname === '/' && <Button
-                color={showAdd ? 'red' : 'green'}
+                color={showAdd ? '#A52A2A' : '#DEB887'}
                 text={showAdd ? 'Close' : 'Add'}
                 onClick={onAdd} />}
         </header>
@@ -20,7 +20,7 @@ const Header = ({ title: fancytitle, onAdd, showAdd }) => {
 
 // have a default value for everything that is not required
 Header.defaultProps = {
-    title: 'Task Tracker'
+    title: 'Task Manager'
 }
 
 // or say that something is required -- then don't have a default
