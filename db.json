@@ -17,6 +17,12 @@
       "text": "Sell a Kayak",
       "day": "Feb 7th at 1:30pm",
       "reminder": true
+    },
+    {
+      "text": "Go Fishing",
+      "day": "Feb 8th at 6:30",
+      "reminder": false,
+      "id": 4
     }
   ]
 }
