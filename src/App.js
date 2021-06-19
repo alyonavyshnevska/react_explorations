@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './components/Header'
+import Footer from './components/Footer'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
+import About from './components/About'
 
 function App() {
 
@@ -55,19 +58,30 @@ function App() {
 
   // whatever i return must be a single component (e.g.div)
   return (
-    // can only return one component
-    <div className="container">
-      {/* When Add button is ckicked then ShowTasks is toggeled */}
-      <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
-      {/* Show task fields or not. Short wat to do a ternary operation */}
-      {showAddTask && <AddTask onAdd={addTask} />}
-      {/* if there are tasks show them, if not say that they are cnomleted */}
-      {tasks.length > 0 ? (
-        <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
-      ) :
-        'All tasks completed'}
+    <Router>
+      {/* // can only return one component */}
+      <div className="container">
+        {/* When Add button is ckicked then ShowTasks is toggeled */}
+        <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
 
-    </div>
+        {/* Go to about page, do not show tasks */}
+        <Route path='/' exact render={(props) => (
+          <>
+            {/* Show task fields or not. Short wat to do a ternary operation */}
+            {showAddTask && <AddTask onAdd={addTask} />}
+            {/* if there are tasks show them, if not say that they are cnomleted */}
+            {tasks.length > 0 ? (
+              <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
+            ) :
+              'All tasks completed'}
+          </>
+        )
+
+        } />
+        <Route path='/about' component={About} />
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
