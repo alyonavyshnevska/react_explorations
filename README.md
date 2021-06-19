@@ -1,8 +1,14 @@
-# Getting Started with Create React App
+### A simple task manager 
+
+![demo](https://github.com/alyonavyshnevska/react_explorations/blob/master/demo/demo.gif?raw=true)
+
+Tools used:
+
+- React library
+- React-router-dom
+- json server to simulate backend
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
 
 In the project directory, you can run:
 
