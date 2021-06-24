@@ -10,6 +10,21 @@ Tools used:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+--------
+
+### Mock Backend
+
+For mock backend I use 'json server', which allows me to create REST API with my own data.
+The way ot works:
+
+1. Install [json-server](https://github.com/typicode/json-server)
+1. Create a db.json file with some data
+2. Start JSON Server
+3. make POST, PUT, PATCH or DELETE requests and changes will be automatically and safely saved to db.json using [lowdb](https://github.com/typicode/lowdb)
+
+----------
+
 In the project directory, you can run:
 
 ### `npm start`
